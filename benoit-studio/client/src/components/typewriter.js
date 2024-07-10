@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const Typewriter = ({ words, delay, wordDelay}) => {
+
+const Typewriter = ({ words, delay, wordDelay, infinite}) => {
     const [currentText, setCurrentText] = useState('');
     const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
     const [currentWordIndex, SetCurrentWordIndex] = useState(0);
@@ -12,6 +13,11 @@ const Typewriter = ({ words, delay, wordDelay}) => {
         setCurrentText(prevText => prevText + words[currentWordIndex][currentLetterIndex]);
         setCurrentLetterIndex(prevIndex => prevIndex + 1);
       }, delay);
+    }
+    else if (infinite) 
+    { // ADD THIS CHECK
+        setCurrentLetterIndex(0);
+        setCurrentText('');
     }
     else
     {//assume end of word

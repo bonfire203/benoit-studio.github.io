@@ -1,5 +1,7 @@
 import Header from '../components/header';
 import Typewriter from '../components/typewriter';
+import ToggleChar from '../components/toggleChar';
+
 
 const Home = () => {
     const words = ['a Technical Manager', 'Software Engineer', 'Game Designer', 'Storyteller', 'Your Next Developer']
@@ -12,7 +14,8 @@ const Home = () => {
             <div class="bg-gradient-to-r from-primary to-secondary flex-center flex">
                 <div class = "text-white mx-12 my-12">
                     <h1 class="text-9xl">
-                        Hello I am <Typewriter words={words} delay={letterDelay} wdelay={wordDelay}/>
+                        Hello I am <Typewriter words={words} wordDelay={wordDelay} delay={letterDelay}/>
+                        <ToggleChar char='_' delay={750}/>
                     </h1>
                 </div>
             </div>
