@@ -1,6 +1,7 @@
 import Header from '../components/header';
 import Typewriter from '../components/typewriter';
 import ToggleChar from '../components/toggleChar';
+import { Fragment } from 'react';
 
 
 const Home = () => {
@@ -9,10 +10,14 @@ const Home = () => {
     const letterDelay = 100;
     
     return (
-        <div class="h-screen bg-gradient-to-r from-primary to-secondary">
+        <Fragment>
+        <div class="h-auto bg-gradient-to-r from-primary to-secondary">
             <Header></Header>
-            <div class="bg-gradient-to-r from-primary to-secondary flex-center flex">
-                <div class = "text-white mx-12 my-12">
+            <div class="flex">
+                <div class = "flex justify-center mx-12 my-12">
+                    <div class="mx-8">
+
+                    </div>
                     <h1 class="text-9xl">
                         Hello I am <Typewriter words={words} wordDelay={wordDelay} delay={letterDelay}/>
                         <ToggleChar char='_' delay={750}/>
@@ -20,6 +25,13 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        <div class = "flex justify-center items-center h-100 bg-neutral">
+            <h1 class="text-4xl">
+                I am passionate about...
+            </h1>
+        </div >
+
+        </Fragment>
         
     )
 };
